@@ -1,0 +1,69 @@
+[
+  {
+    "id": "KB-AUTH-001",
+    "category": "Authentication",
+    "title": "Corporate Outlook Password Reset Procedure",
+    "keywords": [
+      "outlook",
+      "password",
+      "reset",
+      "active directory",
+      "mfa"
+    ],
+    "solution": "1. Navigate to identity.company.com.\n2. Click 'Self-Service Password Reset'.\n3. Complete MFA challenge via Authenticator App.\n4. Enter new compliant password (16+ chars).\n5. Wait 5 minutes for AD synchronization."
+  },
+  {
+    "id": "KB-AUTH-002",
+    "category": "Authentication",
+    "title": "SSO Token Expiration and Session Cache Clearance",
+    "keywords": [
+      "sso",
+      "token",
+      "okta",
+      "saml",
+      "login failed",
+      "unauthorized"
+    ],
+    "solution": "1. Clear browser cookies and local storage for domain *.company.com.\n2. Revoke active OAuth tokens via Okta dashboard.\n3. Execute 'kinit -R' on Linux workstations to refresh Kerberos tickets."
+  },
+  {
+    "id": "KB-INFRA-001",
+    "category": "Infrastructure",
+    "title": "EC2 High CPU Remediation Playbook",
+    "keywords": [
+      "ec2",
+      "cpu",
+      "aws",
+      "high utilization",
+      "process lock"
+    ],
+    "solution": "1. Run top/htop to identify rogue PID.\n2. Inspect CloudWatch metric granularities (1-min intervals).\n3. Scale ASG desired capacity by +1 if traffic surge.\n4. Capture thread dump if Java process, then issue SIGTERM."
+  },
+  {
+    "id": "KB-CODE-001",
+    "category": "Code",
+    "title": "Java Spring Boot NullPointerException Troubleshooting",
+    "keywords": [
+      "java",
+      "spring boot",
+      "nullpointerexception",
+      "npe",
+      "exception"
+    ],
+    "solution": "1. Inspect stack trace line number.\n2. Verify @Autowired dependencies are registered beans.\n3. Check Optional wrapper implementations on service layer queries.\n4. Enable debug log level: logging.level.org.springframework=DEBUG."
+  },
+  {
+    "id": "KB-BILLING-001",
+    "category": "Billing",
+    "title": "AWS Cost Anomaly Investigation",
+    "keywords": [
+      "aws",
+      "bill",
+      "cost",
+      "spike",
+      "cloud",
+      "budget"
+    ],
+    "solution": "1. Access AWS Cost Explorer -> Anomaly Detection.\n2. Filter by UsageType to locate resource spikes (e.g., Unblended Cost).\n3. Check orphan EBS volumes, NAT Gateway egress, or unattached Elastic IPs."
+  }
+]

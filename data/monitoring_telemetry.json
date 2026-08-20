@@ -1,0 +1,34 @@
+{
+  "metrics": [
+    {
+      "resource_id": "i-0a8f912c4b1112e",
+      "resource_name": "prod-api-cluster-node-01",
+      "type": "EC2 Instance",
+      "metrics": {
+        "cpu_utilization": "98.4%",
+        "memory_used": "88.2%",
+        "disk_iops": "14200"
+      },
+      "status": "CRITICAL",
+      "alerts": [
+        "CPUThresholdExceeded",
+        "HighMemoryPaging"
+      ]
+    },
+    {
+      "resource_id": "db-aurora-prod-writer",
+      "resource_name": "production-aurora-pg-writer",
+      "type": "RDS PostgreSQL",
+      "metrics": {
+        "cpu_utilization": "99.1%",
+        "active_connections": "480/500",
+        "read_latency": "140ms"
+      },
+      "status": "CRITICAL",
+      "alerts": [
+        "ConnectionPoolExhaustion",
+        "LockWaitTimeout"
+      ]
+    }
+  ]
+}

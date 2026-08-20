@@ -1,0 +1,22 @@
+{
+  "accounts": [
+    {
+      "account_id": "aws-prod-110293",
+      "current_month_cost": "$142,500.00",
+      "previous_month_cost": "$98,000.00",
+      "variance": "+45.4%",
+      "top_cost_drivers": [
+        {
+          "service": "Amazon EC2",
+          "cost": "$62,000.00",
+          "increase_reason": "Provisioned m5.8xlarge instances"
+        },
+        {
+          "service": "AWS NAT Gateway",
+          "cost": "$28,400.00",
+          "increase_reason": "Cross-region data transfer spike"
+        }
+      ]
+    }
+  ]
+}
