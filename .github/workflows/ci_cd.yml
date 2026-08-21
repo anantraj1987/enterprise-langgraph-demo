@@ -27,7 +27,8 @@ jobs:
         run: pip install ruff
 
       - name: Run Ruff Linter
-        run: ruff check . -–exit-zero
+        run: ruff check . --exit-zero
+
 
   # -------------------------------------------------------------------
   # 2. Unit, Security & Guardrail Testing
