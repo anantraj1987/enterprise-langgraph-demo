@@ -7,7 +7,7 @@ from graph.state import IncidentState
 from graph.router import route_by_intent, evaluate_confidence_route
 
 # Import Nodes
-from nodes.guardrail_node_old import input_guardrail_node, output_guardrail_node
+from nodes.guardrail_node import input_guardrail_node, output_guardrail_node
 from nodes.classify_node import classify_intent_node
 from nodes.auth_node import auth_analysis_node
 from nodes.mcp_node import mcp_execution_node
@@ -98,6 +98,9 @@ def build_guarded_mcp_graph(checkpointer=None) -> StateGraph:
 
     memory_saver = checkpointer if checkpointer is not None else MemorySaver()
     return workflow.compile(checkpointer=memory_saver)
+
+
+build_incident_graph = build_guarded_mcp_graph
 
 
 compiled_guarded_graph = build_guarded_mcp_graph()

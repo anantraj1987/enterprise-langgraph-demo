@@ -40,7 +40,7 @@ def test_infrastructure_routing_path(graph):
     result = graph.invoke(initial_state, config=config)
     
     assert result["intent"] == "Infrastructure"
-    assert "monitoring_node" in result["visited_nodes"]
+    assert "mcp_execution_node" in result["visited_nodes"]
     assert "code_node" not in result["visited_nodes"]
 
 

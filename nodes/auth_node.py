@@ -16,6 +16,6 @@ def auth_analysis_node(state: IncidentState) -> dict:
             
     return {
         "retrieved_docs": docs,
-        "visited_nodes": ["auth_analysis_node"],
+        "visited_nodes": ["auth_node"],
         "execution_logs": ["Retrieved identity and authentication protocols"]
     }
